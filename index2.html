@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>myMemoPad_課題</title>
+  <link rel="stylesheet" href="css/sample.css">
+</head>
+
+<body>
+  <header>
+    <h1>MemoPad中級編</h1>
+  </header>
+
+  <main>
+    <input type="text" id="input">
+    <textarea id="text_area"></textarea>
+    <ul>
+      <li id="save">Save</li>
+      <li id="clear">Clear</li>
+    </ul>
+  </main>
+
+  <footer>
+    <small>G's</small>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  
+  <script>
+    $('#save').on('click', function () {
+      const title = $('#input').val();
+    
+       });
+
+  var lists = 'リンゴ,バナナ,メロン,イチゴ,スイカ';
+
+  var result = lists.split(',');
+
+  console.log(result);
+
+
+
+//----------------------------------------------------
+
+
+  let months = 'Jan..Feb..Mar..Apr..May..Jun';
+  let monthAry = months.split('..');
+
+  console.log(monthAry);
+  //>> (6)["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+
+
+
+  //  const text2 = $('text_area').val();
+  //  const word_space = text2.split(' ');
+  //  console.log(word_space);
+  //  console.log(text2);
+
+
+
+
+    $('#save').on('click', function () {
+        
+       const title = $('#input').val();
+        let man = title.split(' ');
+        //const text = $('#text_area').val();
+        const data = {
+          title:  title,
+          //text: text,
+
+        };
+        //let months = 'Jan Feb Mar Apr May Jun';
+        //let word_dot = text.split(',');   
+        //console.log(word_dot);
+      
+
+        console.log(data);
+
+
+        const jsonData = JSON.stringify(data);
+        console.log(jsonData);
+        localStorage.setItem('memo', jsonData);
+      });
+
+      $('#clear').on('click', function () {
+        localStorage.removeItem('memo');
+        $('#input').val('');
+        $('#text_area').val('');
+        
+      });
+
+      if (localStorage.getItem('memo')) {
+          const jsonData = localStorage.getItem('memo');
+          console.log(jsonData);
+          const data = JSON.parse(jsonData);
+          console.log(data);
+          $('#input').val(data.title);
+          $('#text_area').val(data.text);
+        }
+
+
+          // let months = 'Jan Feb Mar Apr May Jun';
+          // let monthAry = months.split(' ');
+
+          // console.log(monthAry);
+
+  </script>
+
+</body>
+
+</html>

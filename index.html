@@ -1,67 +1,147 @@
 <!DOCTYPE html>
-<html lang="ja">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>myMemoPad_課題</title>
-  <link rel="stylesheet" href="css/sample.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-  <header>
-    <h1>MemoPad中級編</h1>
-  </header>
+    <h2>textareaの文字列（改行あり）</h2>
+    <textarea id="area">
 
-  <main>
-    <input type="text" id="input">
-    <textarea id="text_area"></textarea>
-    <ul>
-      <li id="save">Save</li>
-      <li id="clear">Clear</li>
-    </ul>
-  </main>
+    </textarea>
+    <!-- <div id="btn">
+        <button >ボタン</button>
+    </div> -->
+    <div id="btn2">
+        <button>入力</button>
+    </div>
+    <div id ="save">
+        <button>save</button>
+    </div>
+    
+    <p id="ahaha">kaka</p>
+    <p id="count_number">3</p>
 
-  <footer>
-    <small>G's</small>
-  </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
 
-  
-  <script>
-    $('#save').on('click', function () {
-        const title = $('#input').val();
-        const text = $('#text_area').val();
-        const data = {
-          title: title,
-          text: text,
-        };
-        
-        console.log(data);
-        const jsonData = JSON.stringify(data);
-        console.log(jsonData);
-        localStorage.setItem('memo', jsonData);
-      });
-
-      $('#clear').on('click', function () {
-        localStorage.removeItem('memo');
-        $('#input').val('');
-        $('#text_area').val('');
-        
-      });
-
-      if (localStorage.getItem('memo')) {
-          const jsonData = localStorage.getItem('memo');
-          console.log(jsonData);
-          const data = JSON.parse(jsonData);
-          console.log(data);
-          $('#input').val(data.title);
-          $('#text_area').val(data.text);
-        }
-
-  </script>
-
+    
 </body>
-
 </html>
+
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+        // var area = document.getElementById('area');
+        // var btn = document.getElementById('btn');
+        // const sup = area.value.split(/\n/);
+        
+        // const a1 =( sup[1]);
+        // const a2 =( sup[2]);
+        // const a3 =( sup[3])
+
+        // console.log(a1);
+        // $("#btn").on("click", function () {
+        //         $("#ahaha").text({
+        //            a2
+        //         });
+        //     });
+
+        // $("#btn").on("click", function () {
+               
+        //         console.log(area.value.split(/\n/));
+        //        // console.log(area);
+        //        //  $("#ahaha").html(a2);
+        //        $("#btn").html('<div id="btn3"><button>ボタン3</button></div>')
+                     
+        //     });
+        
+        $("#btn2").on("click", function () {
+            const areaText = area.value.split(/\n/);
+
+            const a1 = (areaText[1]);
+            const a2 = (areaText[2]);
+            const a3 = (areaText[3]);
+            
+
+               // console.log(area.value.split(/\n/));
+              //  console.log(area);
+                $("#ahaha").html(a2);
+
+                // const areaLength = (area.length);
+                // console.log(areaLength);
+
+            });
+
+            const clothing = (area)
+            const clothLength = (clothing.length);
+            console.log(clothLength);
+
+
+        //save------------------------------------------------------------
+        $("#save").on("click", function () {
+                const areaText = area.value.split(/\n/);
+                const text = $("#area").val();
+                localStorage.setItem("memo", text);
+                console.log(areaText);
+                const areaLength = (areaText.length);
+                console.log(areaLength);
+            });
+        
+        if (localStorage.getItem("memo")) {
+                const text = localStorage.getItem("memo");
+                $("#area").val(text);
+            }
+
+
+        //timePlase----------------------------------------------------------  
+        
+        
+
+        // const areaLength = (area.length);
+        // console.log(areaLength);
+
+        const alertmsg = function () {
+                console.log("3")
+            }
+            setTimeout(alertmsg, 0);
+
+            const countdown_2 = function () {
+                    $("#count_number").html("2");
+                    console.log("2")
+                }
+                setTimeout(countdown_2, 1000);
+
+
+            const countdown_1 = function () {
+                $("#count_number").html("1");
+                console.log("1");
+            }
+            setTimeout(countdown_1, 2000);
+   
+            
+
+
+            const countdown_0 = function () {
+                $("#count_number").html("0");
+                console.log("0")
+            }
+            setTimeout(countdown_0, 3000);
+        //     let str = area.join(',');
+        //    console.log(str);
+
+          // let sampleArea = document.getElementById("");
+            // sampleArea.innerHTML = "表示したい文字列";
+
+        //ボタンをクリックしたら、改行ごとに配列へ格納する
+        // btn.addEventListener('click', function () {
+        // console.log(area.value.split(/\n/));
+        // console.log(area);
+        
+        // })
+
+
+    </script>
