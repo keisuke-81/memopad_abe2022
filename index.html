@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>textareaの文字列（改行あり）</h2>
+    <h2>thank you lettar</h2>
+    
     <textarea id="area">
 
     </textarea>
@@ -20,8 +21,10 @@
     <div id ="save">
         <button>save</button>
     </div>
+
+    <h2 id="title">タイトル</h2>
     
-    <p id="ahaha">kaka</p>
+    <p id="mainText">mainText</p>
     <p id="count_number">3</p>
 
    
@@ -62,23 +65,33 @@
         $("#btn2").on("click", function () {
             const areaText = area.value.split(/\n/);
 
+            const t1 = (areaText[0]);
             const a1 = (areaText[1]);
             const a2 = (areaText[2]);
             const a3 = (areaText[3]);
+
+
             
 
                // console.log(area.value.split(/\n/));
               //  console.log(area);
-                $("#ahaha").html(a2);
+                
+                $("#title").html(t1);
+              //  $("#mainText").html(a2);
 
                 // const areaLength = (area.length);
                 // console.log(areaLength);
 
             });
 
-            const clothing = (area)
-            const clothLength = (clothing.length);
-            console.log(clothLength);
+      
+            const areaLength = (area.Length);
+            console.log(areaLength);
+
+            for (let i = 0; i < areaLength; i++) {
+                    console.log(i);
+                }
+        
 
 
         //save------------------------------------------------------------
@@ -89,6 +102,26 @@
                 console.log(areaText);
                 const areaLength = (areaText.length);
                 console.log(areaLength);
+                const x = (areaLength)
+                for (let i = 0; i < x; i++) {
+                
+                    
+               
+                const mI = (areaText[i]);
+                console.log(mI);
+
+                // const mIText = ()
+               
+
+                // const countdown_2 = function () {
+                //         $("#count_number").html("2");
+                //         console.log("2")
+                  //  } 
+                
+                //$("#mainText").html(mI);
+
+            }
+
             });
         
         if (localStorage.getItem("memo")) {
