@@ -1,180 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <h2>thank you lettar</h2>
+    <link rel="stylesheet" href="css/style.css">
     
+</head>
+
+<body>
+    <h1> messege for you </h1>
+<div class="top">
     <textarea id="area">
 
     </textarea>
-    <!-- <div id="btn">
-        <button >ボタン</button>
-    </div> -->
-    <div id="btn2">
-        <button>入力</button>
+
+    <div class="button">
+            <div id="save">
+                <button>save</button>
+            </div>
+            <div id="save">
+                <a href=""><button>strat</button></a>
+            </div>
+            <div id="clear">
+                <button>clear</button>
+            </div>
     </div>
-    <div id ="save">
-        <button>save</button>
-    </div>
+</div>
+<div class="text_back">
 
     <h2 id="title">タイトル</h2>
-    
-    <p id="mainText">mainText</p>
-    <p id="count_number">3</p>
 
-   
+    <div class="number">
+        <p id="count_number">messege for you</p>
+    </div>
+</div>
 
-    
+
+
+
 </body>
+
 </html>
 
 
-   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
 
-        // var area = document.getElementById('area');
-        // var btn = document.getElementById('btn');
-        // const sup = area.value.split(/\n/);
-        
-        // const a1 =( sup[1]);
-        // const a2 =( sup[2]);
-        // const a3 =( sup[3])
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
 
-        // console.log(a1);
-        // $("#btn").on("click", function () {
-        //         $("#ahaha").text({
-        //            a2
-        //         });
-        //     });
+  
 
-        // $("#btn").on("click", function () {
-               
-        //         console.log(area.value.split(/\n/));
-        //        // console.log(area);
-        //        //  $("#ahaha").html(a2);
-        //        $("#btn").html('<div id="btn3"><button>ボタン3</button></div>')
-                     
-        //     });
-        
-        $("#btn2").on("click", function () {
+    // $("#btn2").on("click", function () {
+    //     const areaText = area.value.split(/\n/);
+
+    //     const t1 = (areaText[0]);
+    //     const a1 = (areaText[1]);
+    //     const a2 = (areaText[2]);
+    //     const a3 = (areaText[3]);
+    // });
+
+
+    const areaLength = (area.Length);
+    console.log(areaLength);
+
+    for (let i = 0; i < areaLength; i++) {
+        console.log(i);
+    }
+
+
+
+    //save------------------------------------------------------------
+
+
+    $("#save").on("click", function () {
+        const areaText = area.value.split(/\n/);
+        const t1 = (areaText[0]);
+      //   $("#title").html(t1);
+        const text = $("#area").val();
+        localStorage.setItem("memo", text);
+
+    });
+
+
+
+
+    if (localStorage.getItem("memo")) {
+        const text = localStorage.getItem("memo");
+        $("#area").val(text);
+    }
+
+
+    //clear-----------------------------------
+
+    $("#clear").on("click", function () {
+            localStorage.removeItem("memo");
+            $("#area").val("");
+        });
+
+
+    //timePlase----------------------------------------------------------  
+
+    const title = function () {
+        const areaText = area.value.split(/\n/);
+        const t1 = (areaText[0]);
+        $("#title").html(t1);
+        console.log("10")
+    }
+    setTimeout(title, 0);
+
+    const text_1 = function () {
+        const areaText = area.value.split(/\n/);
+        const a1 = (areaText[1]);
+
+        $("#count_number").html(a1);
+        console.log("9")
+    }
+    setTimeout(text_1, 5000);
+
+
+    const text_2 = function () {
+        const areaText = area.value.split(/\n/);
+        const a2 = (areaText[2]);
+        $("#count_number").html(a2);
+        console.log("8");
+    }
+    setTimeout(text_2, 9000);
+
+
+
+
+    const text_3 = function () {
+        const areaText = area.value.split(/\n/);
+        const a3 = (areaText[3]);
+        $("#count_number").html(a3);
+        console.log("7")
+    }
+    setTimeout(text_3, 13000);
+
+    const text_4 = function () {
+        const areaText = area.value.split(/\n/);
+        const a4 = (areaText[4]);
+        $("#count_number").html(a4);
+        console.log("6")
+    }
+    setTimeout(text_4, 17000);
+
+    const text_5 = function () {
+        const areaText = area.value.split(/\n/);
+        const a5 = (areaText[5]);
+        $("#count_number").html(a5);
+        console.log("5")
+    }
+    setTimeout(text_5, 21000);
+
+    const text_6 = function () {
+        const areaText = area.value.split(/\n/);
+        const a6 = (areaText[6]);
+        $("#count_number").html(a6);
+        console.log("4")
+    }
+    setTimeout(text_6, 25000);
+
+    const text_7 = function () {
+        const areaText = area.value.split(/\n/);
+        const a7 = (areaText[7]);
+        $("#count_number").html(a7);
+        console.log("3")
+    }
+    setTimeout(text_7, 29000);
+
+    const text_8 = function () {
+        const areaText = area.value.split(/\n/);
+        const a8 = (areaText[8]);
+        $("#count_number").html(a8);
+        console.log("2")
+    }
+    setTimeout(text_8, 33000);
+
+    const text_9 = function () {
+        const areaText = area.value.split(/\n/);
+        const a9 = (areaText[9]);
+        $("#count_number").html(a9);
+        console.log("1")
+    }
+    setTimeout(text_9, 37000);
+
+    const text_10 = function () {
             const areaText = area.value.split(/\n/);
-
-            const t1 = (areaText[0]);
-            const a1 = (areaText[1]);
-            const a2 = (areaText[2]);
-            const a3 = (areaText[3]);
-
-
-            
-
-               // console.log(area.value.split(/\n/));
-              //  console.log(area);
-                
-                $("#title").html(t1);
-              //  $("#mainText").html(a2);
-
-                // const areaLength = (area.length);
-                // console.log(areaLength);
-
-            });
-
-      
-            const areaLength = (area.Length);
-            console.log(areaLength);
-
-            for (let i = 0; i < areaLength; i++) {
-                    console.log(i);
-                }
-        
+            const a10 = (areaText[10]);
+            $("#count_number").html(a10);
+            console.log("1")
+    }
+        setTimeout(text_10, 41000);
+    
+    const text_11 = function () {
+            const areaText = area.value.split(/\n/);
+            const a11 = (areaText[11]);
+            $("#count_number").html(a11);
+            console.log("1")
+    }
+        setTimeout(text_11, 45000);
 
 
-        //save------------------------------------------------------------
-        $("#save").on("click", function () {
-                const areaText = area.value.split(/\n/);
-                const text = $("#area").val();
-                localStorage.setItem("memo", text);
-                console.log(areaText);
-                const areaLength = (areaText.length);
-                console.log(areaLength);
-                const x = (areaLength)
-                for (let i = 0; i < x; i++) {
-                
-                    
-               
-                const mI = (areaText[i]);
-                console.log(mI);
-
-                // const mIText = ()
-               
-
-                // const countdown_2 = function () {
-                //         $("#count_number").html("2");
-                //         console.log("2")
-                  //  } 
-                
-                //$("#mainText").html(mI);
-
-            }
-
-            });
-        
-        if (localStorage.getItem("memo")) {
-                const text = localStorage.getItem("memo");
-                $("#area").val(text);
-            }
 
 
-        //timePlase----------------------------------------------------------  
-        
-        
-
-        // const areaLength = (area.length);
-        // console.log(areaLength);
-
-        const alertmsg = function () {
-                console.log("3")
-            }
-            setTimeout(alertmsg, 0);
-
-            const countdown_2 = function () {
-                    $("#count_number").html("2");
-                    console.log("2")
-                }
-                setTimeout(countdown_2, 1000);
-
-
-            const countdown_1 = function () {
-                $("#count_number").html("1");
-                console.log("1");
-            }
-            setTimeout(countdown_1, 2000);
-   
-            
-
-
-            const countdown_0 = function () {
-                $("#count_number").html("0");
-                console.log("0")
-            }
-            setTimeout(countdown_0, 3000);
-        //     let str = area.join(',');
-        //    console.log(str);
-
-          // let sampleArea = document.getElementById("");
-            // sampleArea.innerHTML = "表示したい文字列";
-
-        //ボタンをクリックしたら、改行ごとに配列へ格納する
-        // btn.addEventListener('click', function () {
-        // console.log(area.value.split(/\n/));
-        // console.log(area);
-        
-        // })
-
-
-    </script>
+</script>
